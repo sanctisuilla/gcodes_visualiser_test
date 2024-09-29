@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Audio Visualizer</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: calc(100vh - 60px); /* Full height minus the header */
+        }
+
+        #controls {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .button-group {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 10px; /* Space between button rows */
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        label, button {
+            background-color: #444;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+        }
+
+        #visualizer {
+            width: 800px;
+            height: 400px;
+            background-color: #111;
+            border: 1px solid #444;
+            margin: 20px auto; /* Center the canvas with margin */
+            display: block; /* Ensures the canvas behaves like a block element */
+        }
+    </style>
+    
+</head>
+<body>
+
+    <!--<h1>Audio Visualizer</h1>-->
+
+    <div id="controls">
+        <div class="button-group">
+            <label for="track1">Upload Stereo</label>
+            <input type="file" id="track1" accept="audio/*">
+            
+            <label for="track2">Upload G Codes Immersive</label>
+            <input type="file" id="track2" accept="audio/*">
+        </div>
+    
+        <div class="button-group">
+            <button id="switchButton">Switch Track</button>
+            <button id="playButton">Play</button>
+            <button id="stopButton">Stop</button>
+        </div>
+    </div>
+    
+    <canvas id="visualizer"></canvas>
+
+    <script src="app.js"></script>
+</body>
+</html>
